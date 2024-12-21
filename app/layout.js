@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
+import SmoothScrolling from "@/components/SmoothScrolling";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,9 @@ export default function RootLayout({ children }) {
         </head>
         <body className={`${inter.className}`}>
           <Header />
-          <main className="min-h-screen"> {children}</main>
+          <main className="min-h-screen">
+            <SmoothScrolling>{children}</SmoothScrolling>
+          </main>
           <Toaster richColors />
         </body>
       </html>
